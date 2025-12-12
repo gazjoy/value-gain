@@ -18,6 +18,14 @@ Then open http://localhost:4173 or the port shown.
 - Vercel: `vercel .` (framework = “Other”, output dir = `.`, no build step).
 - GitHub Pages: push to `main`, enable Pages for the repo root (static).
 
+### Vercel config
+
+- `vercel.json` is included for static hosting with SPA-style routing. Key bits:
+  - `cleanUrls: true`
+  - Fallback route to `index.html` for client-side routing:
+    - `{ "handle": "filesystem" }`
+    - `{ "src": "/(.*)", "dest": "/index.html" }`
+
 ## Inputs and method
 
 - Inputs: average visitors/month, orders/month, average order value (£).
