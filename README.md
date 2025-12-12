@@ -17,6 +17,11 @@ Then open http://localhost:4173 or the port shown.
 - Netlify: drag-drop or `netlify deploy --dir .` for previews; `netlify deploy --prod` for prod.
 - GitHub Pages: push to `main`, enable Pages for the repo root (static). No build step required.
 
+## Pages
+
+- `index.html`: Calculator inputs (visitors, orders, AOV, currency, uplift %, network factor). Submitting redirects to the results page via query params.
+- `result.html`: Renders headline revenue/orders plus table breakdown per impairment using the same calculation logic.
+
 ## Inputs and method
 
 - Inputs: average visitors/month, orders/month, average order value (£).

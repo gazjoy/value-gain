@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Value Calculator – Results</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero hero--compact">
+    <div class="hero__content">
+      <p class="eyebrow">Results</p>
+      <h1>Your accessibility opportunity</h1>
+      <p class="lede">Based on your inputs, UK prevalence data, and 69% click-away risk applied to disabled shoppers and their influenced network.</p>
+      <a class="cta secondary" href="index.html">Back to calculator</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel">
+      <div class="panel__header panel__header--stack">
+        <div>
+          <p class="eyebrow">Headline</p>
+          <h2>Potential monthly revenue unlocked</h2>
+          <p class="hint">
+            Regained customers converting at your baseline rate. Based on the Click-Away Pound finding that 69% of disabled customers leave inaccessible sites –
+            <a class="inline-link" href="https://www.clickawaypound.com/" target="_blank" rel="noreferrer">visit clickawaypound.com</a>.
+          </p>
+        </div>
+        <div class="headline-total" aria-live="polite">
+          <div class="headline-total__value" id="headline-revenue">–</div>
+          <div class="headline-total__meta" id="headline-orders">– potential orders</div>
+          <div class="headline-total__pill" id="headline-params">–</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header panel__header--stack">
+        <div>
+          <p class="eyebrow">Breakdown</p>
+          <h2>Opportunity by impairment</h2>
+          <p class="hint">Includes influenced friends/family via the network factor.</p>
+        </div>
+      </div>
+      <div class="table-wrapper" aria-live="polite">
+        <table class="breakdown-table" id="breakdown-table">
+          <thead>
+            <tr>
+              <th>Impairment</th>
+              <th>Potential revenue</th>
+              <th>Potential orders</th>
+              <th>Reachable visitors</th>
+              <th>Prevalence / 10k</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./result.js"></script>
+</body>
+</html>
+
