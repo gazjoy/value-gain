@@ -1,9 +1,2 @@
-{
-  "version": 2,
-  "cleanUrls": true,
-  "routes": [
-    { "handle": "filesystem" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
-}
+// Placeholder file to avoid Vercel config; not used for GitHub Pages deployment.
 
