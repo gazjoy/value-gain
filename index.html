@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessibility Value Calculator</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__content">
+      <p class="eyebrow">Accessibility Value Calculator</p>
+      <h1>See the revenue you could unlock by making your store accessible.</h1>
+      <p class="lede">
+        Based on UK disability prevalence and the Click-Away Pound finding that 69% of disabled customers abandon inaccessible sites.
+      </p>
+      <a class="cta" href="#calculator">Start calculating</a>
+    </div>
+    <div class="hero__badges" aria-label="Proof points">
+      <div class="badge">
+        <span class="badge__title">69%</span>
+        <span class="badge__body">leave when a site is not accessible</span>
+      </div>
+      <div class="badge">
+        <span class="badge__title">Inclusive growth</span>
+        <span class="badge__body">Turn excluded visitors into loyal buyers</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="calculator" class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Inputs</p>
+          <h2>Estimate your monthly opportunity</h2>
+          <p class="hint">Figures stay on your device. We never send data anywhere.</p>
+        </div>
+      </div>
+      <form id="calc-form" class="grid gap">
+        <label class="field">
+          <span>Average visitors / month</span>
+          <input type="number" inputmode="decimal" name="visitors" min="0" step="1" required aria-describedby="visitors-hint">
+          <small id="visitors-hint">Include all channels; we’ll apportion by impairment prevalence.</small>
+        </label>
+        <label class="field">
+          <span>Orders / month</span>
+          <input type="number" inputmode="decimal" name="orders" min="0" step="1" required aria-describedby="orders-hint">
+          <small id="orders-hint">Used to find your baseline conversion rate.</small>
+        </label>
+        <label class="field">
+          <span>Average order value (£)</span>
+          <input type="number" inputmode="decimal" name="aov" min="0" step="0.01" required aria-describedby="aov-hint">
+          <small id="aov-hint">Gross average order value; we’ll estimate uplift against this.</small>
+        </label>
+        <label class="field">
+          <span>Network factor (friends & family influence)</span>
+          <input type="number" inputmode="decimal" name="networkFactor" min="1" max="3" step="0.1" value="1.5" aria-describedby="network-hint">
+          <small id="network-hint">Each disabled shopper can represent their own spend plus influenced friends/family. 1.5 = them + 0.5 additional influenced person.</small>
+        </label>
+        <label class="field">
+          <span>Currency</span>
+          <select name="currency" id="currency" aria-label="Currency">
+            <option value="GBP">GBP £</option>
+            <option value="USD">USD $</option>
+            <option value="EUR">EUR €</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Regain of currently lost customers</span>
+          <input type="range" name="uplift" min="0" max="100" step="5" value="75" aria-describedby="uplift-hint">
+          <div class="range-row">
+            <small id="uplift-hint">Click-Away Pound: 69% leave inaccessible sites. Adjust how much of that group you expect to win back.</small>
+            <strong id="uplift-value">75% of the 69% currently leaving</strong>
+          </div>
+        </label>
+        <div class="field field--inline">
+          <span>Assumptions</span>
+          <p class="hint">Using UK prevalence data (DfE), 69% click-away risk applies to disabled shoppers and their influenced network. Uplift slider controls what share of that 69% you reclaim.</p>
+        </div>
+        <button class="cta" type="submit">Calculate value</button>
+      </form>
+    </section>
+
+    <section class="panel" id="results" aria-live="polite">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Results</p>
+          <h2>Untapped value by impairment group</h2>
+          <p class="hint">We assume regained customers convert at your current rate once barriers are removed.</p>
+        </div>
+        <div class="total-card" aria-live="polite">
+          <div class="total-card__label">Potential monthly revenue unlocked</div>
+          <div class="total-card__value" id="total-revenue">–</div>
+          <div class="total-card__meta" id="total-orders">– potential orders</div>
+        </div>
+      </div>
+      <div id="cards" class="grid gap cards"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel__header">
+        <div>
+          <p class="eyebrow">Why this matters</p>
+          <h2>Accessible by design keeps customers and builds trust</h2>
+        </div>
+      </div>
+      <ul class="pill-list">
+        <li>Better SEO & Core Web Vitals</li>
+        <li>Lower cart abandonment</li>
+        <li>Inclusive brand reputation</li>
+        <li>Fewer support contacts</li>
+        <li>Compliance confidence</li>
+      </ul>
+      <div class="cta-row">
+        <a class="cta secondary" href="https://www.w3.org/WAI/fundamentals/accessibility-intro/" target="_blank" rel="noreferrer">Learn accessibility basics</a>
+        <a class="cta" href="mailto:hello@example.com">Talk to us about an accessibility review</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Sources: DfE Accessibility & Inclusive Design manual (UK prevalence) and Click-Away Pound.</p>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
+
