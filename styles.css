@@ -299,6 +299,17 @@ small {
   text-underline-offset: 3px;
 }
 
+.explain-list {
+  display: grid;
+  gap: 10px;
+  padding-left: 20px;
+  margin: 16px 0;
+}
+
+.explain-list li {
+  line-height: 1.5;
+}
+
 .total-card {
   padding: 14px 16px;
   background: var(--card);
