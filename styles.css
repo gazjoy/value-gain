@@ -394,6 +394,15 @@ small {
   font-size: 13px;
 }
 
+.toggle-row {
+  margin-top: 10px;
+}
+
+.cta--ghost {
+  padding: 10px 14px;
+  font-size: 15px;
+}
+
 .table-wrapper {
   overflow-x: auto;
   border: 1px solid var(--border);
